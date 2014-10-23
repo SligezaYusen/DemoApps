@@ -1,0 +1,768 @@
+﻿<DocInternals>
+  <AlwaysLoose>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+  </AlwaysLoose>
+  <FieldSrcTables>
+    <String>6</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>7</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>8</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>9</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>10</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>11</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>12</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>13</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>14</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>15</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>16</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>17</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>18</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>19</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>20</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>21</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>22</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>23</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>24</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>25</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>26</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>27</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>28</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>29</String>
+    <String>2</String>
+    <String>CIP</String>
+    <String>GL_Calendar</String>
+    <String>30</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>31</String>
+    <String>2</String>
+    <String>CIP</String>
+    <String>Invoice_Calendar</String>
+    <String>32</String>
+    <String>1</String>
+    <String>CIP</String>
+    <String>33</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>34</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>35</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>36</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>37</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>38</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>39</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>40</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>41</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>42</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>43</String>
+    <String>1</String>
+    <String>GL_Calendar</String>
+    <String>44</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>45</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>46</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>47</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>48</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>49</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>50</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>51</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>52</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>53</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>54</String>
+    <String>1</String>
+    <String>Invoice_Calendar</String>
+    <String>55</String>
+    <String>1</String>
+    <String>IVC_Budget_Figures</String>
+    <String>56</String>
+    <String>1</String>
+    <String>IVC_Budget_Figures</String>
+    <String>57</String>
+    <String>1</String>
+    <String>IVC_Budget_Figures</String>
+    <String>58</String>
+    <String>1</String>
+    <String>IVC_Budget_Figures</String>
+    <String>59</String>
+    <String>1</String>
+    <String>IVC_Budget_Figures</String>
+    <String>60</String>
+    <String>1</String>
+    <String>IVC_Budget_Figures</String>
+    <String>61</String>
+    <String>1</String>
+    <String>IVC_Info</String>
+    <String>62</String>
+    <String>1</String>
+    <String>IVC_Info</String>
+    <String>63</String>
+    <String>1</String>
+    <String>IVC_Info</String>
+    <String>64</String>
+    <String>1</String>
+    <String>IVC_Info</String>
+    <String>65</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>66</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>67</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>68</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>69</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>70</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>71</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+    <String>72</String>
+    <String>1</String>
+    <String>DTS_Invoices</String>
+  </FieldSrcTables>
+  <TableViewData>
+    <Pos></Pos>
+    <CtlInfo>
+      <InternalView>
+        <Tables>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>198</Left>
+              <Top>628</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>[Ord_AccountInv](NOLOCK)</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>71</Left>
+              <Top>289</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>Ord_AccountCost</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>341</Left>
+              <Top>18</Top>
+              <Width>203</Width>
+              <Height>912</Height>
+            </Pos>
+            <Caption>Ord_Identity</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>82</Left>
+              <Top>81</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>Ord_AccountInv</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>1424</Left>
+              <Top>493</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>COSTS</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>1237</Left>
+              <Top>792</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>INVOICES</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>1132</Left>
+              <Top>324</Top>
+              <Width>188</Width>
+              <Height>388</Height>
+            </Pos>
+            <Caption>LOAD_INFO</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>633</Left>
+              <Top>278</Top>
+              <Width>100</Width>
+              <Height>82</Height>
+            </Pos>
+            <Caption>Sheet1$</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>1446</Left>
+              <Top>624</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>BAD_DEBT</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>1426</Left>
+              <Top>152</Top>
+              <Width>171</Width>
+              <Height>226</Height>
+            </Pos>
+            <Caption>TimeLine</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>323</Left>
+              <Top>576</Top>
+              <Width>199</Width>
+              <Height>100</Height>
+            </Pos>
+            <Caption>SALES_NUMBERS</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>684</Left>
+              <Top>85</Top>
+              <Width>164</Width>
+              <Height>82</Height>
+            </Pos>
+            <Caption>BRANCHES</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>771</Left>
+              <Top>279</Top>
+              <Width>100</Width>
+              <Height>82</Height>
+            </Pos>
+            <Caption>$Syn 1 Table</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>943</Left>
+              <Top>511</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>SITE</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>786</Left>
+              <Top>365</Top>
+              <Width>136</Width>
+              <Height>190</Height>
+            </Pos>
+            <Caption>SYSTEM_COMMISSPAYSALES</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>352</Left>
+              <Top>296</Top>
+              <Width>172</Width>
+              <Height>190</Height>
+            </Pos>
+            <Caption>Sheet1</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>775</Left>
+              <Top>576</Top>
+              <Width>100</Width>
+              <Height>190</Height>
+            </Pos>
+            <Caption>SP_INFO</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>966</Left>
+              <Top>93</Top>
+              <Width>219</Width>
+              <Height>82</Height>
+            </Pos>
+            <Caption>Threshold_Constants</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>956</Left>
+              <Top>214</Top>
+              <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>Payroll_Dates</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>370</Left>
+              <Top>171</Top>
+              <Width>100</Width>
+              <Height>208</Height>
+            </Pos>
+            <Caption>$YLATCapacityBoard</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>600</Left>
+              <Top>229</Top>
+              <Width>100</Width>
+              <Height>100</Height>
+            </Pos>
+            <Caption>CITY_COORD</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>410</Left>
+              <Top>39</Top>
+              <Width>198</Width>
+              <Height>478</Height>
+            </Pos>
+            <Caption>PRJ24051 QlikView</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>381</Left>
+              <Top>26</Top>
+              <Width>189</Width>
+              <Height>478</Height>
+            </Pos>
+            <Caption>CIP</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>170</Left>
+              <Top>256</Top>
+              <Width>100</Width>
+              <Height>208</Height>
+            </Pos>
+            <Caption>Qualify</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>334</Left>
+              <Top>41</Top>
+              <Width>241</Width>
+              <Height>478</Height>
+            </Pos>
+            <Caption>ClientLic</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>610</Left>
+              <Top>35</Top>
+              <Width>286</Width>
+              <Height>478</Height>
+            </Pos>
+            <Caption>Servers</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>407</Left>
+              <Top>29</Top>
+              <Width>250</Width>
+              <Height>478</Height>
+            </Pos>
+            <Caption>CIP_TMP</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>671</Left>
+              <Top>38</Top>
+              <Width>155</Width>
+              <Height>208</Height>
+            </Pos>
+            <Caption>GL_Calendar</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>119</Left>
+              <Top>26</Top>
+              <Width>193</Width>
+              <Height>208</Height>
+            </Pos>
+            <Caption>Invoice_Calendar</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>108</Left>
+              <Top>281</Top>
+              <Width>182</Width>
+              <Height>136</Height>
+            </Pos>
+            <Caption>Invoice_Calendar-1</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>647</Left>
+              <Top>268</Top>
+              <Width>251</Width>
+              <Height>136</Height>
+            </Pos>
+            <Caption>IVC_Budget_Figures</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>95</Left>
+              <Top>297</Top>
+              <Width>206</Width>
+              <Height>100</Height>
+            </Pos>
+            <Caption>INLFED</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>647</Left>
+              <Top>430</Top>
+              <Width>250</Width>
+              <Height>100</Height>
+            </Pos>
+            <Caption>IVC_Info</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>132</Left>
+              <Top>269</Top>
+              <Width>146</Width>
+              <Height>154</Height>
+            </Pos>
+            <Caption>DTS_Invoices</Caption>
+          </TableViewTableWinSaveInfo>
+        </Tables>
+        <BroomPoints></BroomPoints>
+        <ConnectionPoints></ConnectionPoints>
+        <ZoomFactor>3FF0000000000000</ZoomFactor>
+      </InternalView>
+      <SourceView></SourceView>
+    </CtlInfo>
+    <Mode>0</Mode>
+  </TableViewData>
+  <Bookmarks></Bookmarks>
+  <SavedByVersion>11.20.12129.0409</SavedByVersion>
+  <ForceBackEndMacroExecution>false</ForceBackEndMacroExecution>
+  <FieldTags>
+    <ScriptBased>
+      <FieldTagData>
+        <Tag>$key</Tag>
+        <FieldNames>
+          <String>$Field</String>
+          <String>$Table</String>
+          <String>#GL_date_key#</String>
+          <String>#Invoice_date_key#</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$hidden</Tag>
+        <FieldNames>
+          <String>$Field</String>
+          <String>$Table</String>
+          <String>$Rows</String>
+          <String>$Fields</String>
+          <String>$FieldNo</String>
+          <String>$Info</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$system</Tag>
+        <FieldNames>
+          <String>$Field</String>
+          <String>$Table</String>
+          <String>$Rows</String>
+          <String>$Fields</String>
+          <String>$FieldNo</String>
+          <String>$Info</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$ascii</Tag>
+        <FieldNames>
+          <String>$Field</String>
+          <String>$Table</String>
+          <String>$Info</String>
+          <String>Doc Type</String>
+          <String>Account Description</String>
+          <String>Subledger</String>
+          <String>Reference</String>
+          <String>Project Description</String>
+          <String>Scheduled Implementation Date</String>
+          <String>Progress</String>
+          <String>Asset Number</String>
+          <String>State</String>
+          <String>Addtl Notes</String>
+          <String>Vendor</String>
+          <String>GL Quarter</String>
+          <String>GL WeekYear</String>
+          <String>Invoice Quarter</String>
+          <String>Invoice WeekYear</String>
+          <String>Asset Description</String>
+          <String>InvoiceDate</String>
+          <String>Customer</String>
+          <String>InvoiceDueDate</String>
+          <String>Aging</String>
+          <String>InvoiceVendorStatus</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$text</Tag>
+        <FieldNames>
+          <String>$Field</String>
+          <String>$Table</String>
+          <String>$Info</String>
+          <String>Doc Type</String>
+          <String>Account Description</String>
+          <String>Subledger</String>
+          <String>Reference</String>
+          <String>Project Description</String>
+          <String>Scheduled Implementation Date</String>
+          <String>Progress</String>
+          <String>Asset Number</String>
+          <String>State</String>
+          <String>Addtl Notes</String>
+          <String>Vendor</String>
+          <String>GL Quarter</String>
+          <String>GL WeekYear</String>
+          <String>Invoice Quarter</String>
+          <String>Invoice WeekYear</String>
+          <String>Asset Description</String>
+          <String>InvoiceDate</String>
+          <String>Customer</String>
+          <String>InvoiceDueDate</String>
+          <String>Aging</String>
+          <String>InvoiceVendorStatus</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$numeric</Tag>
+        <FieldNames>
+          <String>$Rows</String>
+          <String>$Fields</String>
+          <String>$FieldNo</String>
+          <String>Address Number</String>
+          <String>Doc Number</String>
+          <String>Batch Number</String>
+          <String>Business Unit</String>
+          <String>Object Account</String>
+          <String>Account Number</String>
+          <String>Amount</String>
+          <String>Invoice Date</String>
+          <String>Invoice Number</String>
+          <String>Cat-24</String>
+          <String>Co#</String>
+          <String>GL Date</String>
+          <String>#GL_date_key#</String>
+          <String>#Invoice_date_key#</String>
+          <String>GL Period</String>
+          <String>GL Week</String>
+          <String>GL Year</String>
+          <String>GL Month</String>
+          <String>GL Day</String>
+          <String>GL CurYTDFlag</String>
+          <String>GL LastYTDFlag</String>
+          <String>GL RC12</String>
+          <String>GL MonthYear</String>
+          <String>GL WeekDay</String>
+          <String>Invoice Week</String>
+          <String>Invoice Year</String>
+          <String>Invoice Month</String>
+          <String>Invoice Day</String>
+          <String>Invoice CurYTDFlag</String>
+          <String>Invoice LastYTDFlag</String>
+          <String>Invoice RC12</String>
+          <String>Invoice MonthYear</String>
+          <String>Invoice WeekDay</String>
+          <String>Asset Cost</String>
+          <String>Purchase Date</String>
+          <String>Service Date</String>
+          <String>Life*</String>
+          <String>Dep Rate</String>
+          <String>IVC</String>
+          <String>Total Commitment</String>
+          <String>Capital Commitment</String>
+          <String>Other Commitments</String>
+          <String>InvoiceNumber</String>
+          <String>Balance</String>
+          <String>InvoiceAmount</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$integer</Tag>
+        <FieldNames>
+          <String>$Rows</String>
+          <String>$Fields</String>
+          <String>$FieldNo</String>
+          <String>Address Number</String>
+          <String>Doc Number</String>
+          <String>Batch Number</String>
+          <String>Business Unit</String>
+          <String>Object Account</String>
+          <String>Invoice Date</String>
+          <String>Invoice Number</String>
+          <String>Cat-24</String>
+          <String>Co#</String>
+          <String>GL Date</String>
+          <String>#GL_date_key#</String>
+          <String>#Invoice_date_key#</String>
+          <String>GL Period</String>
+          <String>GL Week</String>
+          <String>GL Year</String>
+          <String>GL Month</String>
+          <String>GL Day</String>
+          <String>GL CurYTDFlag</String>
+          <String>GL LastYTDFlag</String>
+          <String>GL RC12</String>
+          <String>GL MonthYear</String>
+          <String>GL WeekDay</String>
+          <String>Invoice Week</String>
+          <String>Invoice Year</String>
+          <String>Invoice Month</String>
+          <String>Invoice Day</String>
+          <String>Invoice CurYTDFlag</String>
+          <String>Invoice LastYTDFlag</String>
+          <String>Invoice RC12</String>
+          <String>Invoice MonthYear</String>
+          <String>Invoice WeekDay</String>
+          <String>Asset Cost</String>
+          <String>Purchase Date</String>
+          <String>Service Date</String>
+          <String>Life*</String>
+          <String>IVC</String>
+          <String>Total Commitment</String>
+          <String>Capital Commitment</String>
+          <String>Other Commitments</String>
+          <String>InvoiceNumber</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$timestamp</Tag>
+        <FieldNames>
+          <String>Invoice Date</String>
+          <String>GL Date</String>
+          <String>#GL_date_key#</String>
+          <String>#Invoice_date_key#</String>
+          <String>GL MonthYear</String>
+          <String>Invoice MonthYear</String>
+          <String>Purchase Date</String>
+          <String>Service Date</String>
+          <String>IVC</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$date</Tag>
+        <FieldNames>
+          <String>Invoice Date</String>
+          <String>GL Date</String>
+          <String>#GL_date_key#</String>
+          <String>#Invoice_date_key#</String>
+          <String>GL MonthYear</String>
+          <String>Invoice MonthYear</String>
+          <String>Purchase Date</String>
+          <String>Service Date</String>
+          <String>IVC</String>
+        </FieldNames>
+      </FieldTagData>
+    </ScriptBased>
+    <Interactive></Interactive>
+  </FieldTags>
+  <FieldComments></FieldComments>
+  <TableComments></TableComments>
+  <CreatePrjFolder>false</CreatePrjFolder>
+  <LinkedTables></LinkedTables>
+</DocInternals>

@@ -1,0 +1,406 @@
+﻿///$tab Main
+//Binary [\\ylaqlikviewpub\02.DEVDataModel\Transportation\Template\Template_DATA.qvw];
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;($#,##0.00)';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+///$tab Z3 Import
+// Import of tab 1 from Z3 subledger file from finance
+
+CIP_TMP:
+LOAD [Doc Type], 
+     [Address Number], 
+     [Doc Number], 
+     [Batch Number], 
+     [Business Unit], 
+     [Object Account], 
+     [Account Number], 
+     [Account Description], 
+     Subledger, 
+     [G/L Date], 
+     Explanation, 
+     Amount, 
+     Reference, 
+     [Invoice Date], 
+     [Invoice Number], 
+     [Explanation - Remark], 
+     [Project Description], 
+     [Scheduled Implementation Date], 
+     Progress, 
+     [G/L Period Number], 
+     [Asset Number], 
+     State, 
+     [Cat-24], 
+     Co#, 
+     [Addtl Notes]
+FROM
+[Data\QlikView CIP.xlsx]
+(ooxml, embedded labels, table is [PRJ24051 QlikView])
+WHERE(not IsNull([G/L Date]));
+
+
+// Import and concatenate of tab 2 from Z3 subledger file from finance
+LOAD [Doc Type], 
+     [Address Number], 
+     [Doc Number], 
+     [Batch Number], 
+     [Business Unit], 
+     [Object Account], 
+     [Account Number], 
+     [Account Description], 
+     Subledger, 
+     [G/L Date], 
+     Explanation, 
+     Amount, 
+     Reference, 
+     [Invoice Date], 
+     [Invoice Number], 
+     [Explanation - Remark], 
+     [Project Description], 
+     [Scheduled Implementation Date], 
+     Progress, 
+     [G/L Period Number], 
+     [Asset Number], 
+     State, 
+     [Cat-24], 
+     Co#, 
+     [Addtl Notes]
+FROM
+[Data\QlikView CIP.xlsx]
+(ooxml, embedded labels, table is [PRJ23701 Qlikview-5 Client Lisc])
+WHERE(not IsNull([G/L Date]));
+
+// Import and concatenate of tab 3 from Z3 subledger file from finance
+LOAD [Doc Type], 
+     [Address Number], 
+     [Doc Number], 
+     [Batch Number], 
+     [Business Unit], 
+     [Object Account], 
+     [Account Number], 
+     [Account Description], 
+     Subledger, 
+     [G/L Date], 
+     Explanation, 
+     Amount, 
+     Reference, 
+     [Invoice Date], 
+     [Invoice Number], 
+     [Explanation - Remark], 
+     [Project Description], 
+     [Scheduled Implementation Date], 
+     Progress, 
+     [G/L Period Number], 
+     [Asset Number], 
+     State, 
+     [Cat-24], 
+     Co#, 
+     [Addtl Notes]
+FROM
+[Data\QlikView CIP.xlsx]
+(ooxml, embedded labels, table is [PRJ4664 QlikView - Dell Servers])
+WHERE(not IsNull([G/L Date]));
+
+// Rename some fields and drop temp table
+CIP:
+LOAD [Doc Type], 
+     [Address Number], 
+     [Doc Number], 
+     [Batch Number], 
+     [Business Unit], 
+     [Object Account], 
+     [Account Number], 
+     [Account Description], 
+     Subledger, 
+     [G/L Date] as [GL Date], 
+     [G/L Date] as [#GL_date_key#],
+     Explanation as Vendor, 
+     Amount, 
+     Reference, 
+     [Invoice Date], 
+     [Invoice Date] as [#Invoice_date_key#],
+     [Invoice Number], 
+     [Explanation - Remark], 
+     [Project Description], 
+     [Scheduled Implementation Date], 
+     Progress, 
+     [G/L Period Number] as [GL Period], 
+     [Asset Number], 
+     State, 
+     [Cat-24], 
+     Co#, 
+     [Addtl Notes]
+RESIDENT CIP_TMP;
+
+DROP TABLE CIP_TMP;
+///$tab GL Calendar
+// *****************************************************************************
+// This code creates a master calendar table based on GL Date
+// ******************************************************************************
+
+QuartersMap:  
+MAPPING LOAD   
+rowno() as Month,  
+'Q' & Ceil (rowno()/3) as Quarter  
+AUTOGENERATE (12);  
+  
+Temp:  
+Load  
+               min([GL Date]) as minDate,  
+               max([GL Date]) as maxDate  
+Resident CIP;  
+  
+Let varMinDate = Num(Peek('minDate', 0, 'Temp'));  
+Let varMaxDate = Num(Peek('maxDate', 0, 'Temp'));  
+DROP Table Temp;  
+  
+TempCalendar:  
+LOAD  
+               $(varMinDate) + Iterno()-1 As Num,  
+               Date($(varMinDate) + IterNo() - 1) as TempDate  
+               AutoGenerate 1 While $(varMinDate) + IterNo() -1 <= $(varMaxDate);  
+  
+GL_Calendar:  
+Load  
+               TempDate AS [#GL_date_key#],  
+               week(TempDate) As [GL Week],  
+               Year(TempDate) As [GL Year],  
+               Month(TempDate) As [GL Month],  
+               Day(TempDate) As [GL Day],  
+               YeartoDate(TempDate)*-1 as [GL CurYTDFlag],  
+               YeartoDate(TempDate,-1)*-1 as [GL LastYTDFlag],  
+               inyear(TempDate, Monthstart($(varMaxDate)),-1) as [GL RC12],  
+               date(monthstart(TempDate), 'MMM-YYYY') as [GL MonthYear],  
+               ApplyMap('QuartersMap', month(TempDate), Null()) as [GL Quarter],  
+               Week(weekstart(TempDate)) & '-' & WeekYear(TempDate) as [GL WeekYear],  
+               WeekDay(TempDate) as [GL WeekDay]  
+Resident TempCalendar  
+Order By TempDate ASC;  
+Drop Table TempCalendar; 
+//
+///$tab Invoice Calendar
+// *****************************************************************************
+// This code creates a master calendar table based on Invoice Date
+// ******************************************************************************
+
+QuartersMap:  
+MAPPING LOAD   
+rowno() as Month,  
+'Q' & Ceil (rowno()/3) as Quarter  
+AUTOGENERATE (12);  
+  
+Temp:  
+Load  
+               min([Invoice Date]) as minDate,  
+               max([Invoice Date]) as maxDate  
+Resident CIP;  
+  
+Let varMinDate = Num(Peek('minDate', 0, 'Temp'));  
+Let varMaxDate = Num(Peek('maxDate', 0, 'Temp'));  
+DROP Table Temp;  
+  
+TempCalendar:  
+LOAD  
+               $(varMinDate) + Iterno()-1 As Num,  
+               Date($(varMinDate) + IterNo() - 1) as TempDate  
+               AutoGenerate 1 While $(varMinDate) + IterNo() -1 <= $(varMaxDate);  
+  
+Invoice_Calendar:  
+Load  
+               TempDate AS [#Invoice_date_key#],  
+               week(TempDate) As [Invoice Week],  
+               Year(TempDate) As [Invoice Year],  
+               Month(TempDate) As [Invoice Month],  
+               Day(TempDate) As [Invoice Day],  
+               YeartoDate(TempDate)*-1 as [Invoice CurYTDFlag],  
+               YeartoDate(TempDate,-1)*-1 as [Invoice LastYTDFlag],  
+               inyear(TempDate, Monthstart($(varMaxDate)),-1) as [Invoice RC12],  
+               date(monthstart(TempDate), 'MMM-YYYY') as [Invoice MonthYear],  
+               ApplyMap('QuartersMap', month(TempDate), Null()) as [Invoice Quarter],  
+               Week(weekstart(TempDate)) & '-' & WeekYear(TempDate) as [Invoice WeekYear],  
+               WeekDay(TempDate) as [Invoice WeekDay]  
+Resident TempCalendar  
+Order By TempDate ASC;  
+Drop Table TempCalendar; 
+///$tab IVC Info Extract
+// This component contains the budget figures from IVC xls
+
+IVC_Budget_Figures:
+LOAD [Asset Description], 
+     [Asset Cost], 
+     [Purchase Date], 
+     [Service Date], 
+     [Life*], 
+     [Dep Rate]
+FROM
+[Data\061303 QlikView Software-Trans IVC.xlsx]
+(ooxml, embedded labels, table is [Instr & Input (Do not Print)], filters(
+Remove(Row, Pos(Top, 54)),
+Remove(Row, Pos(Top, 53)),
+Remove(Row, Pos(Top, 52)),
+Remove(Row, Pos(Top, 51)),
+Remove(Row, Pos(Top, 50)),
+Remove(Row, Pos(Top, 49)),
+Remove(Row, Pos(Top, 48)),
+Remove(Row, Pos(Top, 47)),
+Remove(Row, Pos(Top, 46)),
+Remove(Row, Pos(Top, 45)),
+Remove(Row, Pos(Top, 44)),
+Remove(Row, Pos(Top, 43)),
+Remove(Row, Pos(Top, 42)),
+Remove(Row, Pos(Top, 41)),
+Remove(Row, Pos(Top, 40)),
+Remove(Row, Pos(Top, 39)),
+Remove(Row, Pos(Top, 38)),
+Remove(Row, Pos(Top, 37)),
+Remove(Row, Pos(Top, 36)),
+Remove(Row, Pos(Top, 35)),
+Remove(Row, Pos(Top, 34)),
+Remove(Row, Pos(Top, 33)),
+Remove(Row, Pos(Top, 32)),
+Remove(Row, Pos(Top, 31)),
+Remove(Row, Pos(Top, 30)),
+Remove(Row, Pos(Top, 29)),
+Remove(Row, Pos(Top, 28)),
+Remove(Row, Pos(Top, 27)),
+Remove(Row, Pos(Top, 26)),
+Remove(Row, Pos(Top, 25)),
+Remove(Row, Pos(Top, 24)),
+Remove(Row, Pos(Top, 18)),
+Remove(Row, Pos(Top, 17)),
+Remove(Row, Pos(Top, 15)),
+Remove(Row, Pos(Top, 14)),
+Remove(Row, Pos(Top, 13)),
+Remove(Row, Pos(Top, 12)),
+Remove(Row, Pos(Top, 11)),
+Remove(Row, Pos(Top, 10)),
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1)),
+Remove(Col, Pos(Top, 56)),
+Remove(Col, Pos(Top, 55)),
+Remove(Col, Pos(Top, 54)),
+Remove(Col, Pos(Top, 53)),
+Remove(Col, Pos(Top, 52)),
+Remove(Col, Pos(Top, 51)),
+Remove(Col, Pos(Top, 50)),
+Remove(Col, Pos(Top, 49)),
+Remove(Col, Pos(Top, 48)),
+Remove(Col, Pos(Top, 47)),
+Remove(Col, Pos(Top, 46)),
+Remove(Col, Pos(Top, 45)),
+Remove(Col, Pos(Top, 44)),
+Remove(Col, Pos(Top, 43)),
+Remove(Col, Pos(Top, 42)),
+Remove(Col, Pos(Top, 41)),
+Remove(Col, Pos(Top, 40)),
+Remove(Col, Pos(Top, 39)),
+Remove(Col, Pos(Top, 38)),
+Remove(Col, Pos(Top, 37)),
+Remove(Col, Pos(Top, 36)),
+Remove(Col, Pos(Top, 35)),
+Remove(Col, Pos(Top, 34)),
+Remove(Col, Pos(Top, 33)),
+Remove(Col, Pos(Top, 2)),
+Remove(Col, Pos(Top, 1)),
+Remove(Col, Pos(Top, 30)),
+Remove(Col, Pos(Top, 29)),
+Remove(Col, Pos(Top, 28)),
+Remove(Col, Pos(Top, 27)),
+Remove(Col, Pos(Top, 26)),
+Remove(Col, Pos(Top, 25)),
+Remove(Col, Pos(Top, 24)),
+Remove(Col, Pos(Top, 23)),
+Remove(Col, Pos(Top, 22)),
+Remove(Col, Pos(Top, 21)),
+Remove(Col, Pos(Top, 20)),
+Remove(Col, Pos(Top, 19)),
+Remove(Col, Pos(Top, 18)),
+Remove(Col, Pos(Top, 17)),
+Remove(Col, Pos(Top, 16)),
+Remove(Col, Pos(Top, 15)),
+Remove(Col, Pos(Top, 14)),
+Remove(Col, Pos(Top, 13)),
+Remove(Col, Pos(Top, 12)),
+Remove(Col, Pos(Top, 11)),
+Remove(Col, Pos(Top, 10)),
+Remove(Col, Pos(Top, 9)),
+Remove(Col, Pos(Top, 8)),
+Remove(Col, Pos(Top, 7))
+));
+
+// IVC totals from xls
+
+///$tab IVC Inline Data
+// IVC manual data load
+
+IVC_Info:
+LOAD * INLINE [
+    IVC, Total Commitment, Capital Commitment, Other Commitments
+    061303, 875000, 498000, 377000
+];
+
+///$tab Import DTS Transactions
+// Import DTS transactions from external import
+
+DTS_Invoices:
+//LOAD Date as InvoiceDate, 
+//     No. as InvoiceNumber, 
+//     Customer, 
+//     [Due date] as InvoiceDueDate, 
+//     Aging, 
+//     Balance, 
+//     Total as InvoiceAmount
+//FROM
+//Data\DTSinvoices_all.xls
+//(biff, embedded labels, header is 1 lines, table is Worksheet$);
+
+Directory;
+LOAD Date as InvoiceDate, 
+     No. as InvoiceNumber, 
+     Customer, 
+     [Due date] as InvoiceDueDate, 
+     Aging, 
+     Balance, 
+     Total as InvoiceAmount, 
+     Status as InvoiceVendorStatus
+FROM
+Data\DTSinvoices_all.xls
+(biff, embedded labels, header is 1 lines, table is Worksheet$);
+
+///$tab TimeLine
+//TimeLine:
+//LOAD *,
+//		 ceil(month(%Date)/3) as Qtr,
+//		 'Q' & ceil(month(%Date)/3) as QtrS,
+//         month(%Date) as Month,
+//         monthname(%Date) as MonthName,
+//         year(%Date) as Year,
+//         ceil(month(FiscalDate)/3) as FQ,
+//         'Q' & ceil(month(FiscalDate)/3) as FQS,
+//         num(month(FiscalDate)) as Period,
+//         year(FiscalDate) as FYear,
+//         floor(%Date) as NumDate,
+//         floor(MonthStart(%Date)) as MonthStart;
+//               
+//LOAD *,
+//		addmonths(%Date, -3) as FiscalDate
+//WHERE %Date > 0;
+//
+//LOAD FieldValue('%Date', IterNo()) as %Date
+//AutoGenerate 1
+//While Not IsNull(FieldValue('%Date', IterNo()));	
+//
+//DROP Field FiscalDate; 
